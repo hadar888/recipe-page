@@ -1,7 +1,8 @@
 import React from 'react';
-import { Center, MantineProvider, Paper, Text } from '@mantine/core';
+import { Center, MantineProvider, Paper } from '@mantine/core';
 import '@mantine/core/styles.css';
 import TitleAndList from './TitleAndList';
+import Nutrition from './Nutrition';
 
 function App() {
   return (
@@ -29,7 +30,12 @@ function App() {
              {title: 'Enjoy: ', text: 'Serve hot, with additional salt and pepper if needed.'},
           ]} />
           <div>sprate line</div>
-          <div>title and text and table</div>
+          <Nutrition nutritionTable={[
+              {name: 'Calories', value: '277kcal'},
+              {name: 'Carbs', value: '0g'},
+              {name: 'Protein', value: '20g'},
+              {name: 'Fat', value: '22g'},
+          ]}/>
         </Paper>
       </Center>
     </MantineProvider>
