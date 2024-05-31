@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Center, MantineProvider, Paper, Text } from '@mantine/core';
+import '@mantine/core/styles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider>
+      <Center style={{width: '100vw', height: '100vh', backgroundColor: 'hsl(30, 54%, 90%)'}}>
+        <Paper shadow="sm" radius="lg" p="xl">
+          <div>img</div>
+          <div>Title</div>
+          <div>text</div>
+          <div>text in border</div>
+          <div>title and list</div>
+          <div>sprate line</div>
+          <div>title and list</div>
+          <div>sprate line</div>
+          <div>title and text and table</div>
+        </Paper>
+      </Center>
+    </MantineProvider>
   );
 }
 
