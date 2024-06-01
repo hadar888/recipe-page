@@ -1,13 +1,35 @@
 import React from 'react';
-import { Center, MantineProvider, Paper } from '@mantine/core';
+import { Center, MantineProvider, Paper, Title, createTheme, virtualColor } from '@mantine/core';
 import '@mantine/core/styles.css';
 import TitleAndList from './TitleAndList';
 import Nutrition from './Nutrition';
 
+const theme = createTheme({
+  components: {
+    Title: Title.extend({
+      defaultProps: {
+        order: 2
+      },
+    }),
+  },
+  other: {
+    customColors: {
+      Nutmeg: 'hsl(14, 45%, 36%)',
+      DarkRRaspberry: 'hsl(332, 51%, 32%)',
+      White: 'hsl(0, 0%, 100%)',
+      RoseWhite: 'hsl(330, 100%, 98%)',
+      Eggshell: 'hsl(30, 54%, 90%)',
+      LightGrey: 'hsl(30, 18%, 87%)',
+      WengeBrown: 'hsl(30, 10%, 34%)',
+      DarkCharcoal: 'hsl(24, 5%, 18%)',
+    },
+  },
+});
+
 function App() {
   return (
-    <MantineProvider>
-      <Center style={{width: '100vw', height: '100vh', backgroundColor: 'hsl(30, 54%, 90%)'}}>
+    <MantineProvider theme={theme}>
+      <Center style={{width: '100vw', height: '100vh', backgroundColor: theme.other?.customColors.Eggshell}}>
         <Paper shadow="sm" radius="lg" p="xl">
           <div>img</div>
           <div>Title</div>

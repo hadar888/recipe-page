@@ -10,7 +10,7 @@ const Nutrition = (props: NutritionProps) => {
 
     return (
         <>
-            <Title order={2}>Nutrition</Title>
+            <Title>Nutrition</Title>
             <Text>The table below shows nutritional values per serving without the additional fillings.</Text>
             <Table>
                 <Table.Tbody>

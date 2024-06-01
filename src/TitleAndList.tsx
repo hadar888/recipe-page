@@ -12,7 +12,7 @@ const TitleAndList = (props: TitleAndListProps) => {
 
     return (
         <>
-            <Title order={2}>{title}</Title>
+            <Title>{title}</Title>
             <List listStyleType={numerical ? 'decimal': 'disc'}>
                 {
                     list.map((item) => {
