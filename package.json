@@ -15,7 +15,8 @@
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
-    "@mantine/core": "7.10.1"
+    "@mantine/core": "7.10.1",
+    "styled-components": "^6.1.11"
   },
   "scripts": {
     "start": "react-scripts start",

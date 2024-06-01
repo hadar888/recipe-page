@@ -1,5 +1,6 @@
 import { Flex, List, Title, Text } from "@mantine/core";
 import { ListItem } from "./models/listItem";
+import TextWithInlineTitle from "./TextWithInlineTitle";
 
 interface TitleAndListProps{
     title: string;
@@ -13,16 +14,13 @@ const TitleAndList = (props: TitleAndListProps) => {
     return (
         <>
             <Title>{title}</Title>
-            <List listStyleType={numerical ? 'decimal': 'disc'}>
+            <List type={numerical ? "ordered" : 'unordered'}>
                 {
                     list.map((item) => {
                         return (
                             <List.Item >
                                 {item.title ? 
-                                <Flex gap={'xs'}>
-                                    <Text fw={700}>{item.title}</Text>
-                                    <Text>{item.text}</Text>
-                                </Flex>
+                                <TextWithInlineTitle title={item.title} text={item.text}/>
                                 : 
                                 <Text>{item.text}</Text>
                                 }

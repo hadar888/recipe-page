@@ -1,16 +1,27 @@
 import React from 'react';
-import { Center, MantineProvider, Paper, Title, createTheme, virtualColor } from '@mantine/core';
+import { Center, MantineProvider, Paper, Title, List, createTheme } from '@mantine/core';
 import '@mantine/core/styles.css';
 import TitleAndList from './TitleAndList';
 import Nutrition from './Nutrition';
+import PreparationTime from './PreparationTime';
 
-const theme = createTheme({
+export const theme = createTheme({
   components: {
     Title: Title.extend({
       defaultProps: {
-        order: 2
+        order: 2,
       },
     }),
+    List: List.extend({
+      defaultProps: {
+        spacing: 3,
+      },
+      styles:{
+        itemLabel: {
+          paddingLeft: '10px',
+        }
+      }
+    })
   },
   other: {
     customColors: {
@@ -34,7 +45,12 @@ function App() {
           <div>img</div>
           <div>Title</div>
           <div>text</div>
-          <div>text in border</div>
+          <PreparationTime data={[
+            {title: 'Total', text: 'Approximately 10 minutes'},
+            {title: 'Preparation', text: '5 minutes'},
+            {title: 'Cooking', text: '5 minutes'},]
+          }
+          />
           <TitleAndList title='Ingredients' list={[
             {text: '2-3 large eggs'},
             {text: 'Salt, to taste'},
