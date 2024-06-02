@@ -1,4 +1,9 @@
-import { Flex, Text } from "@mantine/core";
+import { Text } from "@mantine/core";
+import styled from "styled-components";
+
+const SmallTitle = styled.span({
+    fontWeight: 'bold',
+});
 
 interface TextWithInlineTitleProps {
     title?: string;
@@ -9,12 +14,12 @@ const TextWithInlineTitle = (props: TextWithInlineTitleProps) => {
     const {title, text} = props;
 
     return (
-        <>
-            <Flex gap={'xs'}>
-                <Text fw={700}>{title}</Text>
-                <Text>{text}</Text>
-            </Flex>
-        </>
+        <Text>
+            <SmallTitle style={{ fontWeight: 'bold' }}>
+                {title}
+            </SmallTitle>
+            :{text}
+        </Text>
     )
 };
 

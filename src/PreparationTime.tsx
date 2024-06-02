@@ -9,12 +9,15 @@ interface PreparationTimeTitleProps {
 }
 
 const PreparationTimeTitle = styled(Title)<PreparationTimeTitleProps>((props: PreparationTimeTitleProps) => ({
-    color: props.color,
+    color: `${props.color} !important`,
+    fontFamily: "'Outfit' !important" ,
+    //TODO: remove important
 }));
 
 const PreparationTimeContainer = styled(Container)(() => ({
     borderRadius: 15,
     padding: '30px',
+    width: '100%',
 }));
 
 interface PreparationTimeProps {
