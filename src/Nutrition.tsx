@@ -18,9 +18,13 @@ const Nutrition = (props: NutritionProps) => {
                         nutritionTable.map((item) => {
                             return (
                                 <Table.Tr key={item.name}>
-                                    <Table.Td>{item.name}</Table.Td>
                                     <Table.Td>
-                                        <Text fw={700}>{item.value}</Text>
+                                        <Text>
+                                            {item.name}
+                                        </Text>
+                                    </Table.Td>
+                                    <Table.Td>
+                                        <Text fw={700} c="hsl(14, 45%, 36%)">{item.value}</Text>
                                     </Table.Td>
                                 </Table.Tr>
                             )

@@ -1,6 +1,16 @@
-import { Flex, List, Title, Text } from "@mantine/core";
+import { List, Title, Text } from "@mantine/core";
 import { ListItem } from "./models/listItem";
 import TextWithInlineTitle from "./TextWithInlineTitle";
+import styled from "styled-components";
+
+interface NumericalOrPointsListProps {
+    isNumerical: boolean;
+}
+
+const NumericalOrPointsList = styled(List)<NumericalOrPointsListProps>((props: NumericalOrPointsListProps) => ({
+    fontSize: props.isNumerical ? '15px !important' : 'unset',
+    fontWeight: props.isNumerical ? 'bold !important' : 'unset',
+}));
 
 interface TitleAndListProps{
     title: string;
@@ -14,7 +24,8 @@ const TitleAndList = (props: TitleAndListProps) => {
     return (
         <>
             <Title>{title}</Title>
-            <List type={numerical ? "ordered" : 'unordered'}>
+            {
+                <NumericalOrPointsList isNumerical={!!numerical} type={numerical ? "ordered" : 'unordered'}>
                 {
                     list.map((item) => {
                         return (
@@ -28,7 +39,8 @@ const TitleAndList = (props: TitleAndListProps) => {
                         )
                     })
                 }
-            </List>
+                </NumericalOrPointsList>
+            }
         </>
     );
 }
