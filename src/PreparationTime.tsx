@@ -1,5 +1,4 @@
-import { Container, List, Title, Text, Flex } from "@mantine/core";
-import { theme } from "./App";
+import { Container, List, Title } from "@mantine/core";
 import styled from "styled-components";
 import { ListItem } from "./models/listItem";
 import TextWithInlineTitle from "./TextWithInlineTitle";
