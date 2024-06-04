@@ -3,6 +3,7 @@ import { theme } from "./App";
 import styled from "styled-components";
 import { ListItem } from "./models/listItem";
 import TextWithInlineTitle from "./TextWithInlineTitle";
+import { colors } from "./CommonColors";
 
 interface PreparationTimeTitleProps {
     color: string;
@@ -28,8 +29,8 @@ const PreparationTime  = (props: PreparationTimeProps) => {
     const { data } = props;
 
     return (
-        <PreparationTimeContainer bg={theme.other?.customColors.RoseWhite} size="xl">
-            <PreparationTimeTitle order={4} color={theme.other?.customColors.DarkRRaspberry}>Preparation time</PreparationTimeTitle>
+        <PreparationTimeContainer bg={colors.roseWhite} size="xl">
+            <PreparationTimeTitle order={4} color={colors.darkRRaspberry}>Preparation time</PreparationTimeTitle>
             <List spacing={5}>
             {
                 data.map((item) => {

@@ -5,20 +5,9 @@ import TitleAndList from './TitleAndList';
 import Nutrition from './Nutrition';
 import PreparationTime from './PreparationTime';
 import styled from 'styled-components';
+import { colors } from './CommonColors';
 
 export const theme = createTheme({
-  other: {
-    customColors: {
-      Nutmeg: 'hsl(14, 45%, 36%)',
-      DarkRRaspberry: 'hsl(332, 51%, 32%)',
-      White: 'hsl(0, 0%, 100%)',
-      RoseWhite: 'hsl(330, 100%, 98%)',
-      Eggshell: 'hsl(30, 54%, 90%)',
-      LightGrey: 'hsl(30, 18%, 87%)',
-      WengeBrown: 'hsl(30, 10%, 34%)',
-      DarkCharcoal: 'hsl(24, 5%, 18%)',
-    },
-  },
   fontFamily: 'Outfit',
   components: {
     Title: Title.extend({
@@ -28,8 +17,7 @@ export const theme = createTheme({
       styles: {
         root: {
           fontFamily: 'Young Serif',
-          color: 'hsl(14, 45%, 36%)',
-          //TODO: should use color from theme or other way
+          color: colors.nutmeg,
         }
       }
     }),
@@ -40,7 +28,7 @@ export const theme = createTheme({
       styles:{
         root:{
           fontSize: '12px',
-          color: 'hsl(14, 45%, 36%)'
+          color: colors.nutmeg,
         },
         itemLabel: {
           paddingLeft: '10px',
@@ -50,7 +38,7 @@ export const theme = createTheme({
     Text: Text.extend({
       styles: {
         root: {
-          color: 'hsl(30, 10%, 34%)',
+          color: colors.wengeBrown,
         }
       }
     })
@@ -64,7 +52,7 @@ const MainTitle = styled(Title)({
 function App() {
   return (
     <MantineProvider theme={theme}>
-      <Center style={{backgroundColor: theme.other?.customColors.Eggshell, padding: '100px 400px'}}>
+      <Center style={{backgroundColor: colors.eggshell, padding: '100px 400px'}}>
         <Paper shadow="sm" radius="lg" p="xl">
           <Flex direction="column" gap={20}>
             <Image src='image-omelette.jpeg' radius="lg"></Image>
