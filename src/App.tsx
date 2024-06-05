@@ -1,5 +1,5 @@
 import React from 'react';
-import { MantineProvider, Title, List, createTheme, Text } from '@mantine/core';
+import { MantineProvider, createTheme } from '@mantine/core';
 import '@mantine/core/styles.css';
 import { colors } from './CommonColors';
 import AppLayout from './AppLayout';
@@ -7,7 +7,7 @@ import AppLayout from './AppLayout';
 export const theme = createTheme({
   fontFamily: 'Outfit',
   components: {
-    Title: Title.extend({
+    Title: {
       defaultProps: {
         order: 2,
       },
@@ -17,8 +17,8 @@ export const theme = createTheme({
           color: colors.nutmeg,
         }
       }
-    }),
-    List: List.extend({
+    },
+    List: {
       defaultProps: {
         spacing: 3,
       },
@@ -31,14 +31,14 @@ export const theme = createTheme({
           paddingLeft: '10px',
         },
       }
-    }),
-    Text: Text.extend({
+    },
+    Text:{
       styles: {
         root: {
           color: colors.wengeBrown,
         }
       }
-    })
+    },
   },
 });
 

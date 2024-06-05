@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ListItem } from "./models/listItem";
 import TextWithInlineTitle from "./TextWithInlineTitle";
 import { colors } from "./CommonColors";
+import { v4 as uuidv4 } from 'uuid';
 
 interface PreparationTimeTitleProps {
     color: string;
@@ -34,7 +35,7 @@ const PreparationTime  = (props: PreparationTimeProps) => {
             {
                 data.map((item) => {
                     return (
-                        <List.Item>
+                        <List.Item key={uuidv4()}>
                             <TextWithInlineTitle title={item.title} text={item.text}/>
                         </List.Item>
                     )

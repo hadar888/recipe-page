@@ -5,10 +5,11 @@ import TitleAndList from './TitleAndList';
 import Nutrition from './Nutrition';
 import PreparationTime from './PreparationTime';
 import styled from 'styled-components';
+import { colors } from './CommonColors';
 
 const MainTitle = styled(Title)({
-    color: 'black !important',
-  });
+    color: `${colors.darkCharcoal} !important`,
+});
 
 const AppContent = () => {
     return (

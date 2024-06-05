@@ -26,7 +26,7 @@ const AppLayout = () => {
             {
                 isMobile ? 
                     <Flex direction="column" gap={20}>
-                        <Image src='image-omelette.jpeg'></Image>
+                        <Image src='image-omelette.jpeg' alt="dish" style={{width: '100%', height:'100%'}}></Image>
                         <MobileContentContainer>
                             <Flex direction="column" gap={20}>
                                 <AppContent/>
@@ -36,7 +36,7 @@ const AppLayout = () => {
                 :
                     <Paper shadow="sm" radius='lg' p="xl">
                         <Flex direction="column" gap={20}>
-                            <Image src='image-omelette.jpeg' radius='lg'></Image>
+                            <Image src='image-omelette.jpeg'alt="dish" radius='lg' style={{width: '100%', height:'100%'}}></Image>
                             <AppContent/>
                         </Flex>
                     </Paper>
