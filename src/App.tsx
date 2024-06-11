@@ -4,6 +4,7 @@ import '@mantine/core/styles.css';
 import { colors } from './CommonColors';
 import AppLayout from './AppLayout';
 import { RecipeProvider } from './contexts/RecipeContext';
+import { emotionTransform, MantineEmotionProvider } from '@mantine/emotion';
 
 export const theme = createTheme({
   fontFamily: 'Outfit',
@@ -45,10 +46,12 @@ export const theme = createTheme({
 
 function App() {
   return (
-    <MantineProvider theme={theme} >
-      <RecipeProvider>
-        <AppLayout/>
-      </RecipeProvider>
+    <MantineProvider theme={theme} stylesTransform={emotionTransform}>
+      <MantineEmotionProvider>
+        <RecipeProvider>
+          <AppLayout/>
+        </RecipeProvider>
+      </MantineEmotionProvider>
     </MantineProvider>
   );
 }

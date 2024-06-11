@@ -9,7 +9,7 @@ import styled from '@emotion/styled'
 import { RecipeContext } from './contexts/RecipeContext';
 
 const MainTitle = styled(Title)({
-    color: `${colors.darkCharcoal} !important`,
+    color: `${colors.darkCharcoal}`,
 });
 
 const AppContent = () => {

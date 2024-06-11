@@ -10,9 +10,8 @@ interface PreparationTimeTitleProps {
 }
 
 const PreparationTimeTitle = styled(Title)<PreparationTimeTitleProps>((props: PreparationTimeTitleProps) => ({
-    color: `${props.color} !important`,
-    fontFamily: "'Outfit' !important" ,
-    //TODO: remove important
+    color: props.color,
+    fontFamily: 'Outfit',
 }));
 
 const PreparationTimeContainer = styled(Container)(() => ({

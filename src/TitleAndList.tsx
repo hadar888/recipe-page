@@ -9,8 +9,8 @@ interface NumericalOrPointsListProps {
 }
 
 const NumericalOrPointsList = styled(List)<NumericalOrPointsListProps>((props: NumericalOrPointsListProps) => ({
-    fontSize: props.$isNumerical ? '15px !important' : 'unset',
-    fontWeight: props.$isNumerical ? 'bold !important' : 'unset',
+    fontSize: props.$isNumerical ? '15px' : 'unset',
+    fontWeight: props.$isNumerical ? 'bold' : 'unset',
 }));
 
 interface TitleAndListProps{
