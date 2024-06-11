@@ -1,15 +1,16 @@
 import { List, Title, Text } from "@mantine/core";
 import { ListItem } from "./models/listItem";
 import TextWithInlineTitle from "./TextWithInlineTitle";
-import styled from "styled-components";
+import { v4 as uuidv4 } from 'uuid';
+import styled from "@emotion/styled";
 
 interface NumericalOrPointsListProps {
-    isNumerical: boolean;
+    $isNumerical: boolean;
 }
 
 const NumericalOrPointsList = styled(List)<NumericalOrPointsListProps>((props: NumericalOrPointsListProps) => ({
-    fontSize: props.isNumerical ? '15px !important' : 'unset',
-    fontWeight: props.isNumerical ? 'bold !important' : 'unset',
+    fontSize: props.$isNumerical ? '15px !important' : 'unset',
+    fontWeight: props.$isNumerical ? 'bold !important' : 'unset',
 }));
 
 interface TitleAndListProps{
@@ -24,23 +25,21 @@ const TitleAndList = (props: TitleAndListProps) => {
     return (
         <>
             <Title>{title}</Title>
+            <NumericalOrPointsList $isNumerical={!!numerical} type={numerical ? "ordered" : 'unordered'}>
             {
-                <NumericalOrPointsList isNumerical={!!numerical} type={numerical ? "ordered" : 'unordered'}>
-                {
-                    list.map((item) => {
-                        return (
-                            <List.Item >
-                                {item.title ? 
-                                <TextWithInlineTitle title={item.title} text={item.text}/>
-                                : 
-                                <Text>{item.text}</Text>
-                                }
-                            </List.Item>
-                        )
-                    })
-                }
-                </NumericalOrPointsList>
+                list.map((item) => {
+                    return (
+                        <List.Item key={uuidv4()}>
+                            {item.title ? 
+                            <TextWithInlineTitle title={item.title} text={item.text}/>
+                            : 
+                            <Text>{item.text}</Text>
+                            }
+                        </List.Item>
+                    )
+                })
             }
+            </NumericalOrPointsList>
         </>
     );
 }
