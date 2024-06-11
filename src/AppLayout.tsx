@@ -3,6 +3,8 @@ import { colors } from "./CommonColors";
 import AppContent from "./AppContent";
 import { useMediaQuery } from "@mantine/hooks";
 import styled from "@emotion/styled";
+import { useContext } from "react";
+import { RecipeContext } from "./contexts/RecipeContext";
 
 const AppCenter = styled(Center)<CenterProps>`
     background-color: ${colors.eggshell}; 
@@ -21,12 +23,14 @@ const MobileContentContainer = styled.div({
 const AppLayout  = () => {
     const isMobile = useMediaQuery(`(max-width: 600px)`);
 
+    const { recipe } = useContext(RecipeContext);
+
     return (
         <AppCenter>
             {
                 isMobile ? 
                     <Flex direction="column" gap={20}>
-                        <Image src='image-omelette.jpeg' alt="dish" style={{width: '100%', height:'100%'}}></Image>
+                        <Image src={recipe.imgPath} alt="dish" style={{width: '100%', height:'100%'}}></Image>
                         <MobileContentContainer>
                             <Flex direction="column" gap={20}>
                                 <AppContent/>
@@ -36,7 +40,7 @@ const AppLayout  = () => {
                 :
                     <Paper shadow="sm" radius='lg' p="xl">
                         <Flex direction="column" gap={20}>
-                            <Image src='image-omelette.jpeg'alt="dish" radius='lg' style={{width: '100%', height:'100%'}}></Image>
+                            <Image src={recipe.imgPath} alt="dish" radius='lg' style={{width: '100%', height:'100%'}}></Image>
                             <AppContent/>
                         </Flex>
                     </Paper>
