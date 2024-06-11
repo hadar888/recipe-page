@@ -3,6 +3,7 @@ import { MantineProvider, createTheme } from '@mantine/core';
 import '@mantine/core/styles.css';
 import { colors } from './CommonColors';
 import AppLayout from './AppLayout';
+import { RecipeProvider } from './contexts/RecipeContext';
 
 export const theme = createTheme({
   fontFamily: 'Outfit',
@@ -45,7 +46,9 @@ export const theme = createTheme({
 function App() {
   return (
     <MantineProvider theme={theme} >
-      <AppLayout/>
+      <RecipeProvider>
+        <AppLayout/>
+      </RecipeProvider>
     </MantineProvider>
   );
 }
