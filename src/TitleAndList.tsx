@@ -1,8 +1,8 @@
 import { List, Title, Text } from "@mantine/core";
 import { ListItem } from "./models/listItem";
 import TextWithInlineTitle from "./TextWithInlineTitle";
-import styled from "styled-components";
 import { v4 as uuidv4 } from 'uuid';
+import styled from "@emotion/styled";
 
 interface NumericalOrPointsListProps {
     $isNumerical: boolean;

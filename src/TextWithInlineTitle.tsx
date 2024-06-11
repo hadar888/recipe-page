@@ -1,5 +1,5 @@
+import styled from "@emotion/styled";
 import { Text } from "@mantine/core";
-import styled from "styled-components";
 
 const SmallTitle = styled.span({
     fontWeight: 'bold',

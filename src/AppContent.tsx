@@ -4,8 +4,8 @@ import '@mantine/core/styles.css';
 import TitleAndList from './TitleAndList';
 import Nutrition from './Nutrition';
 import PreparationTime from './PreparationTime';
-import styled from 'styled-components';
 import { colors } from './CommonColors';
+import styled from '@emotion/styled'
 
 const MainTitle = styled(Title)({
     color: `${colors.darkCharcoal} !important`,

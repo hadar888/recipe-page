@@ -1,9 +1,9 @@
 import { Container, List, Title } from "@mantine/core";
-import styled from "styled-components";
 import { ListItem } from "./models/listItem";
 import TextWithInlineTitle from "./TextWithInlineTitle";
 import { colors } from "./CommonColors";
 import { v4 as uuidv4 } from 'uuid';
+import styled from "@emotion/styled";
 
 interface PreparationTimeTitleProps {
     color: string;
