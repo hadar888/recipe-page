@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://hadar888.github.io/recipe-page",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hadar888/recipe-page.git"
+  },
   "dependencies": {
     "@emotion/styled": "^11.11.5",
     "@mantine/core": "^7.10.1",
